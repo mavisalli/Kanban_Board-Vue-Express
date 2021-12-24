@@ -53,7 +53,7 @@ npm i -g concurrently
 npm run dev
 ```
 
-Navigate to http://localhost:8080, if you're seeing Kanbant login page, everything is OK!
+Navigate to http://localhost:8080, if you're seeing information page, everything is OK!
 
 
 ### Postman Collection 
