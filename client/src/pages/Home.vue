@@ -2,25 +2,46 @@
   <div>
     <h3>
       Hello, you can go to the board I created by typing
-      http://localhost:3000/61c5bbd43f049ea09ee4bd0c in the url.
+      <span>http://localhost:8080/61c5bbd43f049ea09ee4bd0c</span> in the url.
     </h3>
     <h4>You can find other boards below:</h4>
 
-    <p>61c606812d17de9e1a1aa34e</p>
-    <p>61c608132d17de9e1a1aa36a</p>
+    <p>/61c606812d17de9e1a1aa34e</p>
+    <p>/61c608132d17de9e1a1aa36a</p>
+
+    <hr />
+
+    <h2>Your History Pages</h2>
+    <ol>
+      <li v-for="(path, index) in paths" :key="index">
+        {{ path }}
+      </li>
+    </ol>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      paths: [],
+    };
+  },
+  created() {
+    this.paths = JSON.parse(localStorage.getItem("paths")) || [];
+  },
+};
 </script>
 
 <style scoped>
 h3 {
   font-size: 25px;
-  font-weight: 700;
   color: #ffffff;
   text-align: center;
+}
+
+span {
+  color: orange;
 }
 
 h4 {
@@ -35,5 +56,19 @@ p {
   font-weight: 400;
   color: #ffffff;
   text-align: center;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+}
+
+li {
+  color: orange;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 400;
 }
 </style>
