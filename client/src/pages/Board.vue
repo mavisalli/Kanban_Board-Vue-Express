@@ -4,8 +4,6 @@
       <div class="col-12 board-title">
         {{ board.result.title }}
       </div>
-    </div>
-    <div class="row">
       <div
         class="col-12 col-md-3"
         v-for="(item, index) in board.result.columns"
@@ -17,6 +15,9 @@
           :column_id="item._id"
         />
       </div>
+    </div>
+    <div class="row" v-else>
+      <h3>404 Not Found</h3>
     </div>
   </div>
 </template>
@@ -60,5 +61,12 @@ export default {
 
 .col-12 {
   margin-bottom: 15px;
+}
+
+h3 {
+  color: red;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
 }
 </style>
