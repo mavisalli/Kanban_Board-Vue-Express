@@ -3,6 +3,8 @@ const cors = require("cors");
 const Mongoose = require("mongoose");
 require("dotenv").config();
 
+const boardRoute = require("./routes/boardRoute");
+
 const app = express();
 
 // Connect DB
@@ -19,6 +21,9 @@ Mongoose.connect(process.env.MONGO_URI, {
 
 app.use(express.json());
 app.use(cors());
+
+// Routes
+app.use("/", boardRoute);
 
 app.listen(process.env.PORT, () => {
   console.log(`Listening on ${process.env.PORT}`);
