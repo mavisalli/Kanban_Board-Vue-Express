@@ -37,7 +37,7 @@ exports.createBoard = async (req, res) => {
       message: "Board successfully created with its columns",
     });
   } catch (err) {
-    console.log(err);
+    res.status(400).json({ message: err.message });
   }
 };
 
@@ -47,17 +47,15 @@ exports.getBoard = async (req, res) => {
     let board = await Board.findById(req.query.board_id, { __v: 0 })
       .populate({ path: "columns", populate: { path: "cards", model: "Card" } })
       .exec(); // Get board and populate columns
-    if (board === null) {
+    if (!board) {
       // If project not found, throw error
-      res
-        .status(404)
-        .json({ status: false, message: "This board is not exists." });
+      res.status(404).json({ message: "This board is not exists." });
     } else {
       // If board found, send it
       res.status(200).json({ status: true, result: board });
     }
   } catch (err) {
-    console.log(err);
+    res.status(400).json({ message: err.message });
   }
 };
 
@@ -76,7 +74,7 @@ exports.createCard = async (req, res) => {
       .status(200)
       .json({ status: true, message: "Card successfully created." });
   } catch (err) {
-    console.log(err);
+    res.status(400).json({ message: err.message });
   }
 };
 
@@ -95,7 +93,7 @@ exports.removeCardFromColumn = async (req, res) => {
       message: "Card successfully removed from specified column.",
     });
   } catch (err) {
-    console.log(err);
+    res.status(400).json({ message: err.message });
   }
 };
 
@@ -113,7 +111,7 @@ exports.addCardToColumn = async (req, res) => {
       message: "Card successfully added to specified column",
     });
   } catch (err) {
-    console.log(err);
+    res.status(400).json({ message: err.message });
   }
 };
 
@@ -131,6 +129,6 @@ exports.updateOrderCards = async (req, res) => {
       message: "Updated the order of the cards in the column",
     });
   } catch (err) {
-    console.log(err);
+    res.status(400).json({ message: err.message });
   }
 };
