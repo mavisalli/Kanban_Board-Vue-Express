@@ -1,4 +1,4 @@
-🔎 This is an application where you can create a project and sort your project progress by dragging its tasks into the fixed "backlog", "to-do", "in-progress" and "done" columns.
+🔎 This is an application where you can create a project and sort your project progress by dragging its tasks into the fixed "Backlog", "To-do", "InProgress" and "Done" columns.
 
 Technologies and Tools I use:
 
