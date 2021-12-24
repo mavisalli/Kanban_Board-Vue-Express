@@ -10,12 +10,40 @@ Technologies and Tools I use:
  
 
   
-### Usage
--npm install
+## Development setup
 
--Add your config information of mongodb to the env file.
+Clone the repository
 
--npm run dev
+```
+cd desktop
+git clone https://github.com/mavisalli/Kanban_Board-Vue-Express.git
+```
+
+Then open the project in ide and follow below commands
+
+Install dependencies and run app server with development mode
+
+```sh
+npm install
+npm run app
+```
+
+Install dependencies & serve frontend for development build
+
+```sh
+cd client
+npm install
+npm run serve
+```
+
+To run server and client with one command, first install the concurrently package globally
+
+```sh
+npm i -g concurrently
+npm run dev
+```
+
+Navigate to http://localhost:8080, if you're seeing Kanbant login page, everything is OK!
 
 
 ### Postman Collection 
