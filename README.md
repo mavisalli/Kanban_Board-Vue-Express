@@ -1,4 +1,4 @@
-🔎 This is an application where you can create a project and sort your project progress by dragging its tasks into the fixed backlog, to-do, inprogress and done columns.
+🔎 This is an application where you can create a project and sort your project progress by dragging its tasks into the fixed "backlog", "to-do", "in-progress" and "done" columns.
 
 Technologies and Tools I use:
 
@@ -19,7 +19,15 @@ cd desktop
 git clone https://github.com/mavisalli/Kanban_Board-Vue-Express.git
 ```
 
-Then open the project in ide and follow below commands
+Then open the project in ide and follow below commands:
+
+Create environment file (.env) for your config information of your MongoDB and change its content like below.
+
+```
+PORT= 3000
+MONGO_DB_URI=<YOUR-MONGO-DB-URI>
+```
+
 
 Install dependencies and run app server with development mode
 
@@ -27,6 +35,8 @@ Install dependencies and run app server with development mode
 npm install
 npm run app
 ```
+
+
 
 Install dependencies & serve frontend for development build
 
