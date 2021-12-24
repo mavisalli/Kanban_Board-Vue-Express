@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "app": "nodemon app.js --ignore 'client/'",
+    "app": "node app.js --ignore 'client/'",
     "client": "npm run serve --prefix client",
     "dev": "concurrently \"npm run app\" \"npm run client\""
   },
