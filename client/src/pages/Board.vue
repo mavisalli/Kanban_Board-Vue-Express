@@ -54,8 +54,8 @@ export default {
   font-size: 50px;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 84px;
   text-align: center;
+  padding-bottom: 20px;
 }
 
 .col-12 {
