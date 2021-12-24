@@ -1,18 +1,18 @@
-Rast Mobile Proje Dokümantasyonu
+Rast Mobile Proje Dokumantasyonu
 
-1- Öncelikle figma’da bulunan tasarımı vuejs’ime aktararak başladım. 
+1- Oncelikle figma’da bulunan tasarimi vuejs tarafında kodlayarak başladım. 
 
 2- Tasarımdaki css özelliklerine bağlı kalarak yapılarımı oluşturdum.
 
 3- Bootstrap’ın sadece grid sisteminin mevcut olduğu bir customize bootstrap download edip projeye entegre ettim.
 
-4- Tasarımda kullanılan **SF Pro Display font ailesini indirerek css’imin içine import ettim.**
+4- Tasarımda kullanılan SF Pro Display font ailesini indirerek css’imin içine import ettim.
 
 5- Tasklist ve Card componentleri oluşturarak bunları pages klasörü içindeki Board.vue dosyasına entegre ettim.
 
 6-vuedraggable paketini kullanarak sürükle bırak yönteminden faydalandım
 
-7- Kurmuş olduğum yapı görüntü olarak tasarımla aynı olduktan sonra sayfayı dinamikleştirmek için fake datalar oluşturarak test ettim.
+7- Kurmuş olduğum yapı, görüntü olarak tasarımla aynı olduktan sonra sayfayı dinamikleştirmek için fake datalar oluşturarak test ettim.
 
 8-Backend tarafında Express ve mongodb kullandım.
 
@@ -30,6 +30,13 @@ Rast Mobile Proje Dokümantasyonu
 
 15-Sürüklediğimiz card, bir kolondan başka bir kolona geçtiğinde kartın arkaplan rengini dinamik olarak değiştirdim.
 
+16-Projeyi ziyaret eden kişilerin proje içinde gezindiği url'leri localstorage'a kaydedip anasayfada listeledim
+
 16-Projeyi responsive hale çevirdim.
 
 17-Karmaşık kod blokları için kodların üstüne yorumlar bıraktım.
+
+18-Postman collection oluşturup projenin reposunun readme dosyasında paylaştım
+
+19-localhost:8080 sayfasını ziyaret ettiginizde oluşturduğum boardların id'sini görebilirsiniz
+
