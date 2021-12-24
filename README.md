@@ -19,4 +19,4 @@ Technologies and Tools I use:
 
 
 ### Postman Collection 
-https://go.postman.co/workspace/My-Workspace~d7aabdbb-c245-4d53-847d-7a93757c4a30/collection/16085875-281bd3c3-960a-4f59-a981-6ce6d66124f2
+https://www.postman.com/mavibaris/workspace/rast-mobile-case/collection/16085875-281bd3c3-960a-4f59-a981-6ce6d66124f2
