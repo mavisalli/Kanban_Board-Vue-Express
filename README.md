@@ -2,14 +2,12 @@
 
 Technologies and Tools I use:
 
- :ballot_box_with_check: Back-end: Node.js => express
- 
- :ballot_box_with_check: Front-end: Vue.js
- 
- :ballot_box_with_check: Database: MongoDB
- 
+:ballot_box_with_check: Back-end: Node.js => express
 
-  
+:ballot_box_with_check: Front-end: Vue.js
+
+:ballot_box_with_check: Database: MongoDB
+
 ## Development setup
 
 Clone the repository
@@ -28,15 +26,12 @@ PORT= 3000
 MONGO_DB_URI=<YOUR-MONGO-DB-URI>
 ```
 
-
 Install dependencies and run app server with development mode
 
 ```sh
 npm install
 npm run app
 ```
-
-
 
 Install dependencies & serve frontend for development build
 
@@ -55,6 +50,6 @@ npm run dev
 
 Navigate to http://localhost:8080, if you're seeing information page, everything is OK!
 
+### Postman Collection
 
-### Postman Collection 
 https://www.postman.com/mavibaris/workspace/rast-mobile-case/collection/16085875-281bd3c3-960a-4f59-a981-6ce6d66124f2
