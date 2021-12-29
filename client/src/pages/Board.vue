@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <div class="row" v-if="board.result.columns.length">
+    <div class="row" v-if="error == null">
       <div class="col-12 board-title">
         {{ board.result.title }}
       </div>
@@ -35,17 +35,21 @@ export default {
           columns: [],
         },
       },
+      error: null,
     };
   },
   components: {
     Tasklist,
   },
   async created() {
-    const id = this.$route.params.id;
-
-    this.board = (
-      await axios.get(`http://localhost:3000/boards?board_id=${id}`)
-    ).data;
+    try {
+      const id = this.$route.params.id;
+      this.board = (
+        await axios.get(`http://localhost:3000/boards?board_id=${id}`)
+      ).data;
+    } catch (error) {
+      this.error = error;
+    }
   },
 };
 </script>
