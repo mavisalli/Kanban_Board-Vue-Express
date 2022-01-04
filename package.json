@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "app": "node server/app.js --ignore 'client/'",
+    "start": "node server/app.js --ignore 'client/'",
     "client": "npm run serve --prefix client",
-    "dev": "concurrently \"npm run app\" \"npm run client\""
+    "dev": "concurrently \"npm run start\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
