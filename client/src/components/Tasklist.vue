@@ -29,13 +29,13 @@ export default {
       if (!evt) return;
       if (evt.added) {
         let card_id = evt.added.element._id;
-        axios.post("addToColumn/", { card_id, column_id }).then((res) => {
+        axios.post("/api/addToColumn", { card_id, column_id }).then((res) => {
           console.log(res.data);
         });
       } else if (evt.removed) {
         let card_id = evt.removed.element._id;
         axios
-          .post("removeFromColumn/", {
+          .post("/api/removeFromColumn", {
             card_id,
             column_id,
           })
@@ -48,7 +48,7 @@ export default {
         }));
         console.log(cards);
         axios
-          .post("updateCardOrder/", {
+          .post("/api/updateCardOrder", {
             column_id,
             cards,
           })

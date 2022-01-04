@@ -48,7 +48,7 @@ export default {
     createNewBoard() {
       let title = this.new_board.title;
       axios
-        .post("boards/", {
+        .post("/api/boards", {
           title,
         })
         .then((res) => {

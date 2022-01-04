@@ -63,7 +63,7 @@ export default {
   async created() {
     try {
       const slug = this.$route.params.slug;
-      this.board = (await axios.get(`boards?board_title=${slug}/`)).data;
+      this.board = (await axios.get(`/api/boards?board_title=${slug}`)).data;
     } catch (error) {
       this.error = error;
     }
@@ -72,7 +72,7 @@ export default {
   methods: {
     createNewCard() {
       axios
-        .post("cards/", {
+        .post("/api/cards", {
           title: this.new_card.title,
           description: this.new_card.description,
           column_id: this.board.result.columns[0]._id,
