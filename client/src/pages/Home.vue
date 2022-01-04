@@ -1,17 +1,26 @@
 <template>
   <div>
-    <h3>
-      Hello, you can go to the board I created by typing
-      <span>http://localhost:8080/61c5bbd43f049ea09ee4bd0c</span> in the url.
-    </h3>
-    <h4>You can find other boards below:</h4>
+    <h2>
+      You can see the sample board by typing <span>Kanban Project</span> in the
+      Board Name field.
+    </h2>
+    <div class="form">
+      <label>Board Name</label>
+      <input type="text" v-model="search" />
 
-    <p>/61c606812d17de9e1a1aa34e</p>
-    <p>/61c608132d17de9e1a1aa36a</p>
+      <button class="button" @click="goRegisteredBoard">Go</button>
+    </div>
+
+    <div class="form">
+      <label>New Board Name</label>
+      <input type="text" v-model="new_board.title" />
+      <button class="button" @click="createNewBoard">Create Your Board</button>
+    </div>
 
     <hr />
 
-    <h2>Your History Pages</h2>
+    <h3>Your History Pages</h3>
+
     <ol>
       <li v-for="(path, index) in paths" :key="index">
         {{ path }}
@@ -21,14 +30,35 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
       paths: [],
+      new_board: {
+        title: "",
+      },
+      search: "",
     };
   },
   created() {
     this.paths = JSON.parse(localStorage.getItem("paths")) || [];
+  },
+  methods: {
+    createNewBoard() {
+      let title = this.new_board.title;
+      axios
+        .post("boards/", {
+          title,
+        })
+        .then((res) => {
+          this.$router.push(`${res.data.board.slug}`);
+        });
+    },
+    goRegisteredBoard() {
+      let search = this.search.toLowerCase().replace(" ", "-");
+      this.$router.push(`${search}`);
+    },
   },
 };
 </script>
@@ -59,6 +89,7 @@ p {
 }
 
 h2 {
+  margin-top: -10px;
   font-size: 40px;
   font-weight: 700;
   color: #ffffff;
@@ -70,5 +101,54 @@ li {
   font-size: 20px;
   text-align: center;
   font-weight: 400;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+.button {
+  background-color: #e67e22;
+
+  border: none;
+
+  color: white;
+
+  padding: 15px 32px;
+
+  text-align: center;
+
+  display: inline-block;
+
+  font-size: 20px;
+
+  margin: 4px 2px;
+
+  cursor: pointer;
+}
+
+label {
+  color: #6e6b69;
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+input {
+  width: 30%;
+  color: black;
+  font-size: 20px;
+
+  padding: 10px 20px;
+
+  margin: 5px 10px;
+
+  box-sizing: border-box;
+}
+
+span {
+  color: #e67e22;
 }
 </style>
