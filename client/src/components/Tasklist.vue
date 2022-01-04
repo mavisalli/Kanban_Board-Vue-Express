@@ -25,43 +25,17 @@ export default {
     draggable,
   },
   methods: {
-    // changed: async (column_id, evt) => {
-    //   if (!evt) return;
-    //   if (evt.added) {
-    //     let card_id = evt.added.element._id;
-    //     await axios.post("http://localhost:3000/addToColumn", {
-    //       card_id,
-    //       column_id,
-    //     });
-    //   } else if (evt.removed) {
-    //     let card_id = evt.removed.element._id;
-    //     await axios.post("http://localhost:3000/removeFromColumn", {
-    //       card_id,
-    //       column_id,
-    //     });
-    //   } else if (evt.moved) {
-    //     let cards = this.items.map((item) => ({
-    //       _id: item._id,
-    //     }));
-    //     await axios.post("http://localhost:3000/updateCardOrder", {
-    //       cards,
-    //       column_id,
-    //     });
-    //   }
-    // },
     changed: function (column_id, evt) {
       if (!evt) return;
       if (evt.added) {
         let card_id = evt.added.element._id;
-        axios
-          .post("http://localhost:3000/addToColumn", { card_id, column_id })
-          .then((res) => {
-            console.log(res.data);
-          });
+        axios.post("addToColumn/", { card_id, column_id }).then((res) => {
+          console.log(res.data);
+        });
       } else if (evt.removed) {
         let card_id = evt.removed.element._id;
         axios
-          .post("http://localhost:3000/removeFromColumn", {
+          .post("removeFromColumn/", {
             card_id,
             column_id,
           })
@@ -72,8 +46,9 @@ export default {
         const cards = this.items.map((item) => ({
           _id: item._id,
         }));
+        console.log(cards);
         axios
-          .post("http://localhost:3000/updateCardOrder", {
+          .post("updateCardOrder/", {
             column_id,
             cards,
           })
@@ -103,7 +78,7 @@ export default {
 }
 
 .done .card-item {
-  background-color: #00a88b;
+  background-color: rgb(33, 131, 33);
 }
 
 .tasklist-item {
