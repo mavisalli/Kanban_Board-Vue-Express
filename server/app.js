@@ -26,7 +26,7 @@ app.use(cors());
 app.use("/api/", boardRoute);
 
 // Handle production
-if (process.env.NODE_ENV.trim() === "production") {
+if (process.env.NODE_ENV === "production") {
   // Static folder
   app.use(express.static(__dirname + "/public/"));
 
