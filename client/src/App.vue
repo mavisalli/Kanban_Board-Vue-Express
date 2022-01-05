@@ -5,21 +5,7 @@
 </template>
 
 <script>
-export default {
-  created() {
-    //save visited pages to localstorage
-    const path = this.$route.path;
-    const backlistPaths = ["/"];
-
-    if (backlistPaths.includes(path)) return;
-
-    const paths = JSON.parse(localStorage.getItem("paths")) || [];
-
-    paths.push(path);
-
-    localStorage.setItem("paths", JSON.stringify(paths));
-  },
-};
+export default {};
 </script>
 
 <style></style>

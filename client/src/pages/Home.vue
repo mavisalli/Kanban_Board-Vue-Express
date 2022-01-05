@@ -22,8 +22,8 @@
     <h3>Your History Pages</h3>
 
     <ol>
-      <li v-for="(path, index) in paths" :key="index">
-        {{ path }}
+      <li v-for="(search, index) in paths" :key="index">
+        {{ search }}
       </li>
     </ol>
   </div>
@@ -58,6 +58,11 @@ export default {
     goRegisteredBoard() {
       let search = this.search.toLowerCase().replace(" ", "-");
       this.$router.push(`${search}`);
+
+      //save visited boards to localstorage
+      const paths = JSON.parse(localStorage.getItem("paths")) || [];
+      paths.push(search);
+      localStorage.setItem("paths", JSON.stringify(paths));
     },
   },
 };
