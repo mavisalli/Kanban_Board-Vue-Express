@@ -1,4 +1,4 @@
-Rast Mobile Proje Dokumantasyonu
+Proje Dokumantasyonu
 
 1- Oncelikle figma’da bulunan tasarimi vuejs tarafında kodlayarak başladım. 
 
