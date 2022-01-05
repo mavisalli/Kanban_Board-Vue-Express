@@ -95,7 +95,7 @@ p {
 
 h2 {
   margin-top: -10px;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 700;
   color: #ffffff;
   text-align: center;
