@@ -1,4 +1,8 @@
-🔎 This is an application where you can create a project and sort your project progress by dragging its tasks into the fixed "Backlog", "To-do", "InProgress" and "Done" columns.
+🔎 This is an app where you can create a board and track your progress on the project by adding tasks and dragging them to the fixed "Backlog", "To Do", "In Progress" and "Done" columns.
+
+The boards you view or create are saved in localstorage and reflected in the "your history pages" section on the homepage so that they are not forgotten.
+
+#### :rocket: The project is on heroku: [Live App](https://kanban-board-application.herokuapp.com/)
 
 Technologies and Tools I use:
 
@@ -52,4 +56,4 @@ Navigate to http://localhost:8080, if you're seeing information page, everything
 
 ### Postman Collection
 
-https://www.postman.com/mavibaris/workspace/rast-mobile-case/collection/16085875-281bd3c3-960a-4f59-a981-6ce6d66124f2
+https://www.postman.com/mavibaris/workspace/public/collection/16085875-281bd3c3-960a-4f59-a981-6ce6d66124f2
